@@ -16,7 +16,7 @@ public class PDI {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        //Matriz matriz = Matriz.abrirArquivo("w4.pgm");
+        Matriz matriz = Matriz.abrirArquivo("w4.pgm");
         //Matriz matriz2 = Matriz.abrirArquivo("wg.pgm");
         //Matriz matriz3 = Matriz.abrirArquivo("wb.pgm");
         //Matriz op = Operacoes.escurecer(matriz, 133);
@@ -41,8 +41,8 @@ public class PDI {
 //        Matriz.salvarArquivo(op2, "hubble15tresh.pgm");
 //        int histo[] = Operacoes.histograma(matriz);
 //        Operacoes.salvarArquivo(histo, "histo.txt");
-//        int histoeq[] = Operacoes.histogramaequ(matriz);
-//        Operacoes.salvarArquivo(histoeq, "histoeq.txt");
+        int histoeq[] = Operacoes.histogramaequ(matriz);
+        Operacoes.salvarArquivo(histoeq, "histoeq.txt");
 //          Matrizcor matriz2 = Matrizcor.abrirArquivo();
 //          Matriz op = Operacoes.canal(matriz2, 0);
 //          Matriz.salvarArquivo(op, "lennaR.pgm");
@@ -50,13 +50,13 @@ public class PDI {
 //          Matriz.salvarArquivo(op, "lennaG.pgm");
 //          op = Operacoes.canal(matriz2, 2);
 //          Matriz.salvarArquivo(op, "lennaB.pgm");
-       Matrizcor matriz =  Matrizcor.abrirArquivo("strawberries.ppm");
-       Matriz op = Operacoes.rgbToHSI(matriz,0);
-       Matriz.salvarArquivo(op, "Wh.pgm");
-       op = Operacoes.rgbToHSI(matriz,1);
-       Matriz.salvarArquivo(op, "Ws.pgm");
-       op = Operacoes.rgbToHSI(matriz,2);
-       Matriz.salvarArquivo(op, "Wi.pgm");
+//       Matrizcor matriz =  Matrizcor.abrirArquivo("strawberries.ppm");
+//       Matriz op = Operacoes.rgbToHSI(matriz,0);
+//       Matriz.salvarArquivo(op, "Wh.pgm");
+//       op = Operacoes.rgbToHSI(matriz,1);
+//       Matriz.salvarArquivo(op, "Ws.pgm");
+//       op = Operacoes.rgbToHSI(matriz,2);
+//       Matriz.salvarArquivo(op, "Wi.pgm");
 
     }
     

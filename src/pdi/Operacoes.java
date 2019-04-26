@@ -8,6 +8,7 @@ package pdi;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.Arrays;
 
 /**
  *
@@ -322,6 +323,7 @@ public class Operacoes {
         }
         return resul;
      }
+    
      
      public static int[] histogramaequ(Matriz matriz){
          int histo[] = histograma(matriz);
@@ -333,10 +335,15 @@ public class Operacoes {
              p[i] = (float)histo[i]/((float)(matriz.altura*matriz.largura));
              for(int k=0;k<=i;k++)
                  soma+=p[k];
-             sk[i] = (int)(255 * soma);
+             sk[i] = (int)Math.round(255 * soma);
              soma=0;
          }
-        return sk;
+         int fim[] = new int[256];
+         Arrays.fill(fim,0);
+         for(int i=0;i<sk.length;i++){
+             fim[sk[i]-1]+=histo[i];
+         }
+        return fim;
      }
      
      public static Matriz canal(Matrizcor matriz,int canal){
