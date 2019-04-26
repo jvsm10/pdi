@@ -1,8 +1,8 @@
 # PDI
-Repositório de funções para Processamento de imagens em java
--Filtros
--Limiarização
--Transformações espaciais
--Transformações de intensidade
--Histograma
--Canal de cores
+Repositório de funções para processamento de imagens em java <br>
+-Filtros <br>
+-Limiarização <br>
+-Transformações espaciais <br>
+-Transformações de intensidade <br>
+-Histograma <br>
+-Canal de cores <br>
