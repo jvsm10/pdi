@@ -441,4 +441,57 @@ public class Operacoes {
         }
         return resul;
      }
+     
+     public static Matriz FiltroMediana(Matriz matriz,Matriz filtro){
+         Matriz resul = new Matriz(matriz.altura, matriz.largura);
+         int soma[],p,q;
+         soma = new int[9];
+         Arrays.fill(soma, 0);
+         int tam = filtro.largura;
+         p=(tam/(-2));
+         int y;
+        for(int i =0; i<matriz.altura; i++){
+            for(int j=0 ; j<matriz.largura; j++){
+                p=(tam/(-2));
+                q=(tam/(-2));
+                y = 0;
+              for(int k=0;k<filtro.largura;k++){
+                  for(int n=0;n<filtro.largura;n++){
+                      //System.out.println((i+p) + " -> "+(j+q));
+                      if(i+p<0 || j+q<0 || i+p>=matriz.altura || j+q>=matriz.largura)
+                        y--;
+                      else
+                          soma[y] = matriz.matriz[i+p][j+q] * filtro.matriz[k][n];
+                      q++;
+                      y++;
+                  }
+                  p++;
+                  q=(tam/(-2));
+              }
+              Arrays.sort(soma);
+              y=soma.length/2;
+              resul.matriz[i][j] = soma[y];
+              Arrays.fill(soma, 0);
+            }
+        }
+        return resul;
+     }
+     
+     public static Matriz multK(Matriz matriz, float k){
+         Matriz resul = new Matriz(matriz.altura, matriz.largura);
+        for(int i =0; i<matriz.altura; i++){
+            for(int j=0 ; j<matriz.largura; j++){
+                    resul.matriz[i][j] = (int)(k*matriz.matriz[i][j]);
+            }
+        }
+        return resul;
+     }
+     
+     public static Matriz mascaraNitidez(Matriz matriz,float k,Matriz filtro){
+         Matriz op = Operacoes.Filtro(matriz, filtro);
+         op = Operacoes.subMat(matriz, op);
+         op = Operacoes.multK(op, k);
+         op = Operacoes.somarMatrizes(matriz, op);
+         return op;
+     }
 }
